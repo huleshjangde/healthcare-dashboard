@@ -68,8 +68,7 @@ export default function HealthOverview() {
         ))}
       </div>
 
-      <ChartTwo />
-
+      {typeof window !== "undefined" && <ChartTwo />}
       <UpcomingAppointment />
     </div>
   );

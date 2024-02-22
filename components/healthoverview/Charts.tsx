@@ -219,13 +219,15 @@ const ChartTwo: React.FC = () => {
 
       <div>
         <div id="chartTwo" className=" -ml-5 px-10 py-5">
-          <ReactApexChart
-            options={options}
-            series={state.series}
-            type="bar"
-            height={290}
-            width={"100%"}
-          />
+          {typeof window !== "undefined" && (
+            <ReactApexChart
+              options={options}
+              series={state.series}
+              type="bar"
+              height={290}
+              width={"100%"}
+            />
+          )}
         </div>
 
         {/* <ReactApexChart

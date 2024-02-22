@@ -33,13 +33,15 @@ export const HealthCard = ({
           <span className="text-3xl font-bold">{value}</span> {unit}
         </p>
         <p className="text-black">{status}</p>
-        <ReactApexChart
-          options={chartOptions}
-          series={series}
-          type="area"
-          height={150}
-          width={"100%"}
-        />
+        {typeof window !== "undefined" && (
+          <ReactApexChart
+            options={chartOptions}
+            series={series}
+            type="area"
+            height={150}
+            width={"100%"}
+          />
+        )}
       </CardContent>
     </Card>
   );
