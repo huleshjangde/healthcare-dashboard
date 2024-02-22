@@ -19,7 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={cn("bg-[#FFFCF8] overflow-x-hidden")}>
         <Siderbar />
-        <div className="pl-20 flex-1 ">{children}</div>
+        <div className="sm:pl-20 p-0 flex-1 ">{children}</div>
       </body>
     </html>
   );

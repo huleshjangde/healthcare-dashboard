@@ -78,7 +78,7 @@ export default function HealthOverview() {
     <div className=" h-fit p-6 rounded-lg shadow-lg  ">
       <Navbar />
 
-      <div className="flex  justify-between gap-4 mb-6 mt-2">
+      <div className="flex sm:flex-row flex-col sm:items-start items-center  justify-between sm:w-full w-screen gap-4 mb-6 mt-2">
         {healthCardData.map((cardInfo, index) => (
           <HealthCard key={index} {...cardInfo} />
         ))}

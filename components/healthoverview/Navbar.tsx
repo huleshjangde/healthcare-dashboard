@@ -1,7 +1,7 @@
 import { FiSearch, FiBell } from "react-icons/fi";
 
 const Navbar = () => (
-  <div className="flex sticky items-center justify-between p-4 bg-white ">
+  <div className="flex sticky items-center sm:w-full px-4 w-screen justify-between p-4 bg-white ">
     <div className="text-lg font-bold">
       <p className="text-[22px]"> Health Overview</p>
       <div className="text-base text-gray-500">August 12, 2021</div>

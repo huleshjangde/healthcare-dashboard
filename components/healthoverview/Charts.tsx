@@ -57,13 +57,59 @@ const options: ApexOptions = {
 
   responsive: [
     {
-      breakpoint: 1536,
+      breakpoint: 1000,
+
       options: {
         plotOptions: {
           bar: {
-            borderRadius: 0,
+            horizontal: true,
+            rangeBarOverlap: true,
+            isFunnel3d: true,
+            yaxis: {
+              min: 0,
+              stepSize: 20,
 
-            columnWidth: "25%",
+              max: 80,
+              tickAmount: 3,
+              labels: {
+                formatter: function (val: any) {
+                  return val + "%";
+                },
+              },
+            },
+            xaxis: {
+              labels: {
+                rotate: -45,
+                show: true,
+                rotateAlways: true,
+              },
+              tickPlacement: "on",
+              axisTicks: {
+                show: true,
+              },
+
+              categories: [
+                "Jan 1",
+                "Jan 2",
+                "Jan 4",
+                "Jan 5",
+                "Jan 6",
+                "Jan 7",
+                "Jan 8",
+                "Jan 9",
+                "Jan 10",
+                "Jan 11",
+                "Jan 12",
+                "Jan 13",
+                "Jan 14",
+                "Jan 15",
+              ],
+            },
+            borderRadius: 5,
+            columnWidth: "35%",
+            borderRadiusApplication: "around",
+
+            borderRadiusWhenStacked: "all",
           },
         },
       },

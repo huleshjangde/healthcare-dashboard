@@ -36,7 +36,7 @@ export default function Bmi() {
 
   return (
     <div
-      className={`bg-black/80 h-fit flex flex-col  text-white w-[50%] p-6 rounded-3xl ${Mulishs.className} `}
+      className={`bg-black/80 h-fit flex flex-col  text-white w-screen sm:w-[50%] p-6 rounded-3xl ${Mulishs.className} `}
     >
       <div className="mb-6 flex justify-between">
         <h1 className="text-2xl font-bold mb-2">BMI Calculator</h1>
@@ -59,8 +59,8 @@ export default function Bmi() {
         </div>
       </div>
 
-      <div className="flex justify-between h-full    items-center ">
-        <div className="flex  gap-5 flex-col   justify-between   w-[300px] text-black mb-4">
+      <div className="flex justify-between h-full sm:flex-row flex-col      items-center ">
+        <div className="flex  gap-5 flex-col   justify-between    w-[300px] text-black mb-4">
           <div className="bg-[#F8DEBD] h-full rounded-md px-4 py-2 flex flex-col  items-end">
             <Image
               alt="Body shape"
@@ -142,20 +142,20 @@ export default function Bmi() {
       </div>
 
       {/* 3rd */}
-      <div className="mb-6 flex justify-between items-end ">
+      <div className="mb-6 flex justify-between items-end">
         <div className=" flex flex-col justify-between h-[700px] pt-5 ">
-          <div>
+          <div className="">
             <h2 className="text-[22px] font-bold mb-2 ">Body Measurements</h2>
             <p className="text-sm mb-4 text-[#CACACA] font-bold">
               Last checked 2 Days Ago
             </p>
-            <p className="text-[14px] mb-4 bg-[#5E5E5E] px-2 py-1 w-fit rounded-md">
+            <p className="text-[14px] mb-4 bg-[#5E5E5E] px-2 py-1 sm:w-fit w-full rounded-md">
               Inverted Triangle Body Shape
             </p>
           </div>
 
-          <div className="flex  h-full   justify-between items-center px-5 mb-4   gap-5">
-            <div className="flex flex-col h-full gap-5 justify-end ">
+          <div className="flex  h-full    justify-between items-center px-5 mb-4   gap-5">
+            <div className="flex flex-col  h-full gap-5 justify-end  ">
               <div className="bg-white w-[150px] text-black rounded-md px-5 py-5 mb-2 flex flex-col justify-between items-center">
                 <p className="text-[16px] text-[#5F5F5F]">Chest (in)</p>
                 <p className="text-[24px]  font-semibold flex">
@@ -183,7 +183,7 @@ export default function Bmi() {
         <div className="w-1/2 h-full flex flex-col justify-end ">
           <Image
             alt="Body shape"
-            className="h-full"
+            className="h-1/2 sm:h-full"
             height="400"
             src="/male2.png"
             width="200"

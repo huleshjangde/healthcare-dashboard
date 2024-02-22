@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Sidebar() {
   return (
-    <nav className="bg-white fixed rounded-lg left-0 top-0 w-[64px] gap-20 h-screen flex flex-col items-center px-10 py-10 shadow-lg">
+    <nav className="sm:flex  bg-white fixed rounded-lg left-0 top-0 w-[64px] gap-20 h-screen hidden flex-col items-center px-10 py-10 shadow-lg">
       <Link href={"/"}>
         <FlagIcon className="h-10 w-10 " />
       </Link>
