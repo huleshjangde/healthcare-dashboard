@@ -2,52 +2,45 @@ import { ApexOptions } from "apexcharts";
 import React, { useState } from "react";
 import ReactApexChart from "react-apexcharts";
 
-
-  
-  interface ChartTwoState {
-    series: {
-      name: string;
-      data: number[];
-    }[];
-  }
-  
+interface ChartTwoState {
+  series: {
+    name: string;
+    data: number[];
+  }[];
+}
 
 const options: ApexOptions = {
   colors: ["#CA6B6E", "#478F96", "#D08726"],
-  
+
   stroke: {
     lineCap: "square",
     width: 5,
-    curve:"straight",
-    colors: ['#fff']
+    curve: "straight",
+    colors: ["#fff"],
   },
   tooltip: {
     y: {
-      formatter: function(value, opts) {
-        let percent = opts.w.globals.seriesPercent[opts.seriesIndex][opts.dataPointIndex];
-        return percent.toFixed(0) + '%'
-      }
-    }
+      formatter: function (value, opts) {
+        let percent =
+          opts.w.globals.seriesPercent[opts.seriesIndex][opts.dataPointIndex];
+        return percent.toFixed(0) + "%";
+      },
+    },
   },
-  yaxis:{
-    min:0,
- stepSize:20,
-  
-    max:80,
+  yaxis: {
+    min: 0,
+    stepSize: 20,
+
+    max: 80,
     tickAmount: 3,
     labels: {
-        formatter: function (val) {
-            return val + '%';
-          },
-         
-          
-    }
+      formatter: function (val) {
+        return val + "%";
+      },
+    },
   },
 
-  
   chart: {
-
-    
     fontFamily: "Satoshi, sans-serif",
     type: "bar",
     height: 335,
@@ -67,7 +60,7 @@ const options: ApexOptions = {
         plotOptions: {
           bar: {
             borderRadius: 0,
-        
+
             columnWidth: "25%",
           },
         },
@@ -76,59 +69,66 @@ const options: ApexOptions = {
   ],
   plotOptions: {
     bar: {
-     
       horizontal: false,
-    rangeBarOverlap:true,
-    isFunnel3d: true,
+      rangeBarOverlap: true,
+      isFunnel3d: true,
 
       borderRadius: 5,
       columnWidth: "35%",
-      borderRadiusApplication: 'around',
-    
+      borderRadiusApplication: "around",
+
       borderRadiusWhenStacked: "all",
-     
     },
   },
   dataLabels: {
     enabled: false,
-  
   },
 
   xaxis: {
-   
     labels: {
       rotate: -45,
-        show: true,
-rotateAlways:true
-       
-      },
-      tickPlacement: 'on',
-      axisTicks:{
-        show:true
-      },
-      
+      show: true,
+      rotateAlways: true,
+    },
+    tickPlacement: "on",
+    axisTicks: {
+      show: true,
+    },
 
-    categories: ["Jan 1", "Jan 2", "Jan 4", "Jan 5", "Jan 6", "Jan 7", "Jan 8","Jan 9", "Jan 10", "Jan 11", "Jan 12", "Jan 13", "Jan 14", "Jan 15",],
+    categories: [
+      "Jan 1",
+      "Jan 2",
+      "Jan 4",
+      "Jan 5",
+      "Jan 6",
+      "Jan 7",
+      "Jan 8",
+      "Jan 9",
+      "Jan 10",
+      "Jan 11",
+      "Jan 12",
+      "Jan 13",
+      "Jan 14",
+      "Jan 15",
+    ],
   },
   legend: {
     position: "bottom",
     itemMargin: {
-        vertical : 10,
-        horizontal: 10
+      vertical: 10,
+      horizontal: 10,
     },
-    
+
     containerMargin: {
-        top: 20
+      top: 20,
     },
-    
+
     horizontalAlign: "left",
     fontFamily: "Satoshi",
     fontWeight: 500,
     fontSize: "14px",
 
-
     markers: {
-
       radius: 99,
     },
   },
@@ -149,19 +149,18 @@ const ChartTwo: React.FC = () => {
     series: [
       {
         name: "Aerobics",
-        data: [35, 40, 60, 80, 30,40, 60, 13, 10,20, 40, 60, 13, 10],
+        data: [35, 40, 60, 80, 30, 40, 60, 13, 10, 20, 40, 60, 13, 10],
       },
       {
         name: "Yoga",
-        data: [20, 40, 60, 24, 60,40, 60, 13, 10,20, 40, 60, 13, 10],
+        data: [20, 40, 60, 24, 60, 40, 60, 13, 10, 20, 40, 60, 13, 10],
       },
       {
         name: "Meditation",
-        data: [20, 40, 60, 13, 10,20, 40, 60, 13, 10,20, 40, 60, 13, 10],
+        data: [20, 40, 60, 13, 10, 20, 40, 60, 13, 10, 20, 40, 60, 13, 10],
       },
     ],
   });
- 
 
   const handleReset = () => {
     setState((prevState) => ({
@@ -172,7 +171,6 @@ const ChartTwo: React.FC = () => {
 
   return (
     <div className="col-span-12 h-fit flex flex-col  gap-0 rounded-sm border border-stroke bg-white p-7.5 shadow-default dark:border-strokedark dark:bg-boxdark xl:col-span-4">
-     
       <div className="mb-4 flex  justify-between gap-4 sm:flex px-5 py-10">
         <div>
           <h4 className="text-xl font-semibold text-black dark:text-white">
@@ -190,7 +188,7 @@ const ChartTwo: React.FC = () => {
                 Jan 2021
               </option>
               <option value="" className="dark:bg-boxdark ">
-               Feb 2021
+                Feb 2021
               </option>
             </select>
             <span className="absolute right-3 top-1/2 z-10 -translate-y-1/2">
@@ -226,9 +224,6 @@ const ChartTwo: React.FC = () => {
             height={290}
             width={"100%"}
           />
-
-
-
         </div>
 
         {/* <ReactApexChart
