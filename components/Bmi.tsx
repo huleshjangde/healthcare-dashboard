@@ -142,8 +142,8 @@ export default function Bmi() {
       </div>
 
       {/* 3rd */}
-      <div className="mb-6 flex justify-between items-center">
-        <div className=" flex flex-col justify-between h-[700px] py-5">
+      <div className="mb-6 flex justify-between items-end ">
+        <div className=" flex flex-col justify-between h-[700px] pt-5 ">
           <div>
             <h2 className="text-[22px] font-bold mb-2 ">Body Measurements</h2>
             <p className="text-sm mb-4 text-[#CACACA] font-bold">
@@ -180,7 +180,7 @@ export default function Bmi() {
           </div>
         </div>
 
-        <div className="w-1/2">
+        <div className="w-1/2 h-full flex flex-col justify-end ">
           <Image
             alt="Body shape"
             className="h-full"

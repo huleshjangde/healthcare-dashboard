@@ -5,7 +5,7 @@ import React from "react";
 
 const page = () => {
   return (
-    <div className="flex w-fit h-screen">
+    <div className="flex sm:flex-row flex-col w-fit h-screen">
       {typeof window !== "undefined" && <HealthOverview />}
       <Bmi />
     </div>
