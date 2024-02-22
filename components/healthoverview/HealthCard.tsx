@@ -34,7 +34,9 @@ export const HealthCard = ({
         <p className="text-black ">
           <span className="text-3xl font-bold">{value}</span> {unit}
         </p>
-        <p className="text-black">{status}</p>
+        <p className={`text-black ${bgClass} w-fit px-4 mt-2 rounded-md`}>
+          {status}
+        </p>
         {typeof window !== "undefined" && (
           <Chart
             options={chartOptions}
