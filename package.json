@@ -1,6 +1,7 @@
 {
-  "name": "dash",
+  "name": "healthcaredashboard",
   "version": "0.1.0",
+  "author": "hulesh jangde",
   "private": true,
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"
