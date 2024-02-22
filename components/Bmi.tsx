@@ -23,15 +23,14 @@ export default function Bmi() {
   const [height, setHeight] = useState<number>(125);
   const [bmi, setBmi] = useState("");
 
-  const calculateBMI = () => {
-    if (weight && height) {
-      const heightInMeters = height / 100; // convert cm to meters
-      const bmi = weight / (heightInMeters * heightInMeters);
-      setBmi(bmi.toFixed(2)); // set BMI with 2 decimal places
-    }
-  };
-
   useEffect(() => {
+    const calculateBMI = () => {
+      if (weight && height) {
+        const heightInMeters = height / 100; // convert cm to meters
+        const bmi = weight / (heightInMeters * heightInMeters);
+        setBmi(bmi.toFixed(2)); // set BMI with 2 decimal places
+      }
+    };
     calculateBMI();
   }, [weight, height]);
 
