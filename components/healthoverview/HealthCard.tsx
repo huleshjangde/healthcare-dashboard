@@ -15,7 +15,7 @@ export const HealthCard = ({
   series,
 }: any) => {
   return (
-    <Card className="w-full h-[340px]">
+    <Card className="w-full ">
       <CardHeader className="flex flex-row w-full gap-5 items-center justify-start">
         <div
           className={`w-16 h-10 ${bgClass} flex justify-center items-center rounded-md`}
@@ -42,7 +42,7 @@ export const HealthCard = ({
             options={chartOptions}
             series={series}
             type="area"
-            height={"80%"}
+            height={"50%"}
             width={"100%"}
           />
         )}
