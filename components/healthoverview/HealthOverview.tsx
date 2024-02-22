@@ -35,7 +35,12 @@ export default function HealthOverview() {
       unit: "mg/dL",
       status: "Normal",
       chartOptions: sugar,
-      series: state.series,
+      series: [
+        {
+          name: "Blood Sugar",
+          data: [10, 20, 15, 12],
+        },
+      ],
     },
     {
       bgClass: "bg-[#FBF0F3]",
@@ -45,7 +50,12 @@ export default function HealthOverview() {
       unit: "bpm",
       status: "Normal",
       chartOptions: heart,
-      series: state.series,
+      series: [
+        {
+          name: "Heart Rate",
+          data: [10, 20, 15, 12],
+        },
+      ],
     },
     {
       bgClass: "bg-[#D0FBFF]",
@@ -55,7 +65,12 @@ export default function HealthOverview() {
       unit: "mmHg",
       status: "Normal",
       chartOptions: blood,
-      series: state.series,
+      series: [
+        {
+          name: "Blood Pressure",
+          data: [10, 20, 35, 12],
+        },
+      ],
     },
   ];
 

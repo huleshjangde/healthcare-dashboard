@@ -28,7 +28,7 @@ export const HealthCard = ({
             alt={title}
           />
         </div>
-        <CardTitle className="font-normal w-full">{title}</CardTitle>
+        <CardTitle className="font-normal w-full h-10">{title}</CardTitle>
       </CardHeader>
       <CardContent className="p-0">
         <p className="text-black mx-4 ">
