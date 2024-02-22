@@ -1,6 +1,8 @@
 import Image from "next/image";
-import ReactApexChart from "react-apexcharts";
+// import ReactApexChart from "react-apexcharts";
 import { Card, CardHeader, CardTitle, CardContent } from "../ui/card";
+import dynamic from "next/dynamic";
+const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
 
 export const HealthCard = ({
   bgClass,
@@ -34,7 +36,7 @@ export const HealthCard = ({
         </p>
         <p className="text-black">{status}</p>
         {typeof window !== "undefined" && (
-          <ReactApexChart
+          <Chart
             options={chartOptions}
             series={series}
             type="area"

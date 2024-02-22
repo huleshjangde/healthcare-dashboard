@@ -1,6 +1,7 @@
 "use client";
 
 import ChartTwo from "@/components/healthoverview/Charts";
+import dynamic from "next/dynamic";
 
 import { useState } from "react";
 import { blood, heart, sugar } from "@/lib/area";

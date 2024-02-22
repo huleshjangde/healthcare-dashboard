@@ -1,6 +1,8 @@
 import { ApexOptions } from "apexcharts";
 import React, { useEffect, useState } from "react";
-import ReactApexChart from "react-apexcharts";
+// import ReactApexChart from "react-apexcharts";
+import dynamic from "next/dynamic";
+const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
 
 interface ChartTwoState {
   series: {
@@ -162,14 +164,14 @@ const ChartTwo: React.FC = () => {
     ],
   });
 
-  // const handleReset = () => {
-  //   setState((prevState) => ({
-  //     ...prevState,
-  //   }));
-  // };
-  // useEffect(() => {
-  //   handleReset();
-  // });
+  const handleReset = () => {
+    setState((prevState) => ({
+      ...prevState,
+    }));
+  };
+  useEffect(() => {
+    handleReset();
+  }, []);
 
   return (
     <div className="col-span-12 h-fit flex flex-col  gap-0 rounded-sm border border-stroke bg-white p-7.5 shadow-default dark:border-strokedark dark:bg-boxdark xl:col-span-4">
@@ -220,7 +222,7 @@ const ChartTwo: React.FC = () => {
       <div>
         <div id="chartTwo" className=" -ml-5 px-10 py-5">
           {typeof window !== "undefined" && (
-            <ReactApexChart
+            <Chart
               options={options}
               series={state.series}
               type="bar"
