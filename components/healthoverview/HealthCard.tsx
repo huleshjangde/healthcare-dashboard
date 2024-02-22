@@ -15,7 +15,7 @@ export const HealthCard = ({
   series,
 }: any) => {
   return (
-    <Card className="sm:w-full w-fit  ">
+    <Card className="sm:w-full w-full   ">
       <CardHeader className="flex flex-row w-full gap-5 items-center justify-start">
         <div
           className={`w-16 h-10 ${bgClass} flex justify-center items-center rounded-md`}

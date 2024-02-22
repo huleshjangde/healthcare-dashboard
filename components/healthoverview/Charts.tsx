@@ -66,10 +66,23 @@ const options: ApexOptions = {
             rangeBarOverlap: true,
             isFunnel3d: true,
             yaxis: {
-              min: 0,
-              stepSize: 20,
+              yaxis: {
+                categories: [
+                  "Jan",
+                  "Feb",
+                  "März",
+                  "Apr",
+                  "Mai",
+                  "Jun",
+                  "Jul",
+                  "Aug",
+                  "Sep",
+                  "Okt",
+                  "Nov",
+                  "Dez",
+                ],
+              },
 
-              max: 80,
               tickAmount: 3,
               labels: {
                 formatter: function (val: any) {
@@ -80,13 +93,10 @@ const options: ApexOptions = {
             xaxis: {
               labels: {
                 rotate: -45,
-                show: true,
+                show: false,
                 rotateAlways: true,
               },
               tickPlacement: "on",
-              axisTicks: {
-                show: true,
-              },
 
               categories: [
                 "Jan 1",
@@ -106,7 +116,7 @@ const options: ApexOptions = {
               ],
             },
             borderRadius: 5,
-            columnWidth: "35%",
+            columnWidth: "5%",
             borderRadiusApplication: "around",
 
             borderRadiusWhenStacked: "all",
