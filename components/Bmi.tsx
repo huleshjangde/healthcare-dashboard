@@ -13,11 +13,11 @@ import { Mulish } from "next/font/google";
 import Image from "next/image";
 
 import { useEffect, useState } from "react";
+const Mulishs = Mulish({
+  subsets: ["cyrillic", "cyrillic-ext", "latin", "vietnamese"],
+});
 
 export default function Bmi() {
-  const Mulishs = Mulish({
-    subsets: ["cyrillic", "cyrillic-ext", "latin", "vietnamese"],
-  });
   const [weight, setWeight] = useState<number>(40);
   const [height, setHeight] = useState<number>(125);
   const [bmi, setBmi] = useState("");
