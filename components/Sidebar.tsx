@@ -1,14 +1,37 @@
+import Link from "next/link";
+
 export default function Sidebar() {
   return (
     <nav className="bg-white fixed rounded-lg left-0 top-0 w-[64px] gap-20 h-screen flex flex-col items-center px-10 py-10 shadow-lg">
-      <FlagIcon className="h-10 w-10 " />
+      <Link href={"/"}>
+        <FlagIcon className="h-10 w-10 " />
+      </Link>
+
       <div className="flex flex-col gap-10 justify-center items-center">
-        <LayoutDashboardIcon className="h-6 w-6 mb-6 bg-black text-white" />
-        <FolderIcon className="h-6 w-6 mb-6" />
-        <MailIcon className="h-6 w-6 mb-6" />
-        <TextIcon className="h-6 w-6 mb-6" />
-        <SettingsIcon className="h-6 w-6 mb-6" />
-        <LogOutIcon className="h-6 w-6 mb-6" />
+        <Link href={"/"}>
+          {" "}
+          <LayoutDashboardIcon className="h-6 w-6 mb-6 bg-black text-white" />
+        </Link>
+        <Link href={"/"}>
+          {" "}
+          <FolderIcon className="h-6 w-6 mb-6" />{" "}
+        </Link>
+        <Link href={"/"}>
+          {" "}
+          <MailIcon className="h-6 w-6 mb-6" />{" "}
+        </Link>
+        <Link href={"/"}>
+          {" "}
+          <TextIcon className="h-6 w-6 mb-6" />{" "}
+        </Link>
+        <Link href={"/"}>
+          {" "}
+          <SettingsIcon className="h-6 w-6 mb-6" />
+        </Link>
+        <Link href={"/"}>
+          {" "}
+          <LogOutIcon className="h-6 w-6 mb-6" />{" "}
+        </Link>
       </div>
     </nav>
   );
