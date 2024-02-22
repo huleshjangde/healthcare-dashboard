@@ -185,7 +185,7 @@ export default function Bmi() {
             alt="Body shape"
             className="h-full"
             height="400"
-            src="/male.png"
+            src="/male2.png"
             width="200"
           />
         </div>
