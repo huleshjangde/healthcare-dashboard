@@ -69,7 +69,7 @@ export default function Bmi() {
               src="/scale.png"
               width="100"
             />
-            <div className="flex gap-4 items-center w-full justify-center">
+            <div className="flex gap-4 items-center w-full py-2 justify-center">
               <p className="text-sm ">Height</p>
 
               <div className="text-lg">
@@ -93,7 +93,7 @@ export default function Bmi() {
               src="/scale.png"
               width="100"
             />
-            <div className="flex gap-4 items-center w-full justify-center">
+            <div className="flex gap-4 items-center w-full justify-center py-2">
               <p className="text-sm">Weight</p>
               <div className="text-lg">
                 {" "}
