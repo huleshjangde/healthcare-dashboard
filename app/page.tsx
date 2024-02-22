@@ -6,7 +6,7 @@ import React from "react";
 const page = () => {
   return (
     <div className="flex w-fit h-screen">
-      {/* <HealthOverview /> */}
+      {typeof window !== "undefined" && <HealthOverview />}
       <Bmi />
     </div>
   );
