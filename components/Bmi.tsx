@@ -13,7 +13,8 @@ import { Mulish } from "next/font/google";
 import Image from "next/image";
 
 import { useEffect, useState } from "react";
-const Mulishs = Mulish({
+
+export const Mulishs = Mulish({
   subsets: ["cyrillic", "cyrillic-ext", "latin", "vietnamese"],
 });
 
@@ -33,6 +34,7 @@ export default function Bmi() {
   useEffect(() => {
     calculateBMI();
   }, [weight, height]);
+
   return (
     <div
       className={`bg-black/80 h-fit flex flex-col  text-white w-[50%] p-6 rounded-3xl ${Mulishs.className} `}
