@@ -13,6 +13,8 @@ import { Mulish } from "next/font/google";
 import Image from "next/image";
 
 import { useEffect, useState } from "react";
+import { MeasurementCard } from "./bmi/Measurement";
+import CustomSelect from "./bmi/CustomSelect";
 
 export const Mulishs = Mulish({
   subsets: ["cyrillic", "cyrillic-ext", "latin", "vietnamese"],
@@ -40,23 +42,15 @@ export default function Bmi() {
     >
       <div className="mb-6 flex justify-between">
         <h1 className="text-2xl font-bold mb-2">BMI Calculator</h1>
-        <div className="w-[200] rounded-md border-gray-600 text-gray-400 border-2  ">
-          <Select defaultValue="last-week">
-            <SelectTrigger id="timeframe">
-              <SelectValue className="bg-[#4A4949]">Last Week</SelectValue>
-            </SelectTrigger>
-            <SelectContent
-              className="bg-[#4A4949] text-white"
-              position="popper"
-            >
-              <SelectItem defaultChecked value="last-week">
-                Last Week
-              </SelectItem>
-              <SelectItem value="last-month">Last Month</SelectItem>
-              <SelectItem value="last-year">Last Year</SelectItem>
-            </SelectContent>
-          </Select>
-        </div>
+        <CustomSelect
+          defaultValue="last-week"
+          options={[
+            { value: "last-week", label: "Last Week" },
+            { value: "last-month", label: "Last Month" },
+            { value: "last-year", label: "Last Year" },
+          ]}
+          className="my-custom-select"
+        />
       </div>
 
       <div className="flex justify-between h-full sm:flex-row flex-col      items-center ">
@@ -156,26 +150,22 @@ export default function Bmi() {
 
           <div className="flex  h-full    justify-between items-center px-5 mb-4   gap-5">
             <div className="flex flex-col  h-full gap-5 justify-end  ">
-              <div className="bg-white w-[150px] text-black rounded-md px-5 py-5 mb-2 flex flex-col justify-between items-center">
-                <p className="text-[16px] text-[#5F5F5F]">Chest (in)</p>
-                <p className="text-[24px]  font-semibold flex">
-                  44.5 <ArrowUpIcon className="text-green-500" />
-                </p>
-              </div>
+              <MeasurementCard
+                label="Chest (in)"
+                value={44.5}
+                changeDirection="up"
+              />
 
-              <div className="bg-white text-black rounded-md px-5 py-3 mb-2 flex  flex-col justify-between items-center">
-                <p className="text-[16px] text-[#5F5F5F] ">Waist (in)</p>
-                <p className="text-[24px] font-semibold flex">
-                  34 <ArrowDownIcon className="text-red-500" />
-                </p>
-              </div>
-
-              <div className="bg-white text-black rounded-md px-5 py-3 flex  flex-col justify-between items-center">
-                <p className="text-[16px] text-[#5F5F5F]">Hip (in)</p>
-                <p className="text-[24px]  font-semibold flex ">
-                  42.5 <ArrowDownIcon className="text-red-500" />
-                </p>
-              </div>
+              <MeasurementCard
+                label="Waist (in)"
+                value={34}
+                changeDirection="down"
+              />
+              <MeasurementCard
+                label="Hip (in)"
+                value={42.5}
+                changeDirection="down"
+              />
             </div>
           </div>
         </div>
@@ -191,45 +181,5 @@ export default function Bmi() {
         </div>
       </div>
     </div>
-  );
-}
-
-function ArrowDownIcon(props: any) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M12 5v14" />
-      <path d="m19 12-7 7-7-7" />
-    </svg>
-  );
-}
-
-function ArrowUpIcon(props: any) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="m5 12 7-7 7 7" />
-      <path d="M12 19V5" />
-    </svg>
   );
 }
