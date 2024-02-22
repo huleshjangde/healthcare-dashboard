@@ -1,8 +1,13 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+import { Inter as FontSans } from "next/font/google"
+import "./globals.css";
+import { cn } from "@/lib/utils";
+import Siderbar from "@/components/Sidebar";
+export const fontSans = FontSans({
+  subsets: ["latin"],
+  variable: "--font-sans",
+})
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +21,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body  className={cn(
+         
+          fontSans.variable,"bg-[#FFFCF8] overflow-x-hidden"
+        )}
+        
+        >
+          <Siderbar/>
+          <div className="pl-20 flex-1 ">
+          {children}
+          </div>
+        
+          </body>
     </html>
   );
 }
