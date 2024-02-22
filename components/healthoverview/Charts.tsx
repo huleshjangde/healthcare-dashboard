@@ -1,5 +1,5 @@
 import { ApexOptions } from "apexcharts";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ReactApexChart from "react-apexcharts";
 
 interface ChartTwoState {
@@ -167,7 +167,9 @@ const ChartTwo: React.FC = () => {
       ...prevState,
     }));
   };
-  handleReset;
+  useEffect(() => {
+    handleReset();
+  });
 
   return (
     <div className="col-span-12 h-fit flex flex-col  gap-0 rounded-sm border border-stroke bg-white p-7.5 shadow-default dark:border-strokedark dark:bg-boxdark xl:col-span-4">
